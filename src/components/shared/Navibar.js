@@ -35,22 +35,6 @@ const Navbar = ({ isAuthenticated, username }) => {
           </Typography>
         </Box>
 
-        {/* Кнопка "Категории" */}
-        <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-          <Button color="inherit" onClick={handleMenuOpen}>
-            Категории
-          </Button>
-          <Menu
-            anchorEl={anchorEl}
-            open={Boolean(anchorEl)}
-            onClose={handleMenuClose}
-          >
-            <MenuItem onClick={handleMenuClose}>Фильмы</MenuItem>
-            <MenuItem onClick={handleMenuClose}>Книги</MenuItem>
-            <MenuItem onClick={handleMenuClose}>Сериалы</MenuItem>
-          </Menu>
-        </Box>
-
         {/* Строка поиска */}
         <Box sx={{ width: '50%' }}>
           <TextField
@@ -70,6 +54,23 @@ const Navbar = ({ isAuthenticated, username }) => {
             sx={{ backgroundColor: 'white' }}
           />
         </Box>
+
+        {/* Кнопка "Категории" */}
+        <Button
+          color="inherit"
+          onClick={handleMenuOpen}
+        >
+          Категории
+        </Button>
+        <Menu
+          anchorEl={anchorEl}
+          open={Boolean(anchorEl)}
+          onClose={handleMenuClose}
+        >
+          <MenuItem onClick={handleMenuClose}>Фильмы</MenuItem>
+          <MenuItem onClick={handleMenuClose}>Книги</MenuItem>
+          <MenuItem onClick={handleMenuClose}>Сериалы</MenuItem>
+        </Menu>
 
         {/* Профиль */}
         <Box sx={{ marginLeft: 2 }}>

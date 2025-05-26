@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';  // Для маршрутов
-import Navbar from './components/shared/Navbar';  // Импортируем Navbar
+import Navbar from './components/shared/Navibar';  // Импортируем Navbar
 import Register from './components/auth/Register';  // Страница регистрации
 import HomePage from './pages/HomePage';  // Главная страница
 
