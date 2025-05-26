@@ -1,10 +1,32 @@
+/* Для body */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #121212;
+  color: white;
 }
 
-div {
-  border: 1px solid black;
-  padding: 20px;
-  background-color: white;
+/* Стиль для AppBar (шапки сайта) */
+.MuiAppBar-root {
+  background-color: #333;  /* Темный фон для шапки */
+}
+
+/* Стиль для поля поиска */
+.MuiTextField-root {
+  width: 100%;  /* Растягиваем поле поиска на всю ширину */
+}
+
+/* Кнопки в Navbar */
+.MuiButton-root {
+  text-transform: none;  /* Убираем верхний регистр для кнопок */
+}
+
+/* Иконка поиска */
+.MuiInputAdornment-root {
+  display: flex;
+  align-items: center;
+}
+
+/* Для кнопки Войти */
+.MuiButton-root.MuiButton-text {
+  font-size: 16px;
 }
