@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';  // Импортируем компоненты для маршрутизации
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';  // Используем Routes вместо Switch
 import Register from './components/auth/Register';  // Путь к компоненту регистрации
 import HomePage from './pages/HomePage';  // Путь к странице HomePage
 
@@ -8,10 +8,10 @@ function App() {
     <Router>
       <Routes>
         {/* Маршрут для страницы регистрации */}
-        <Route path="/register" component={Register} />
+        <Route path="/register" element={<Register />} />
         
         {/* Маршрут для главной страницы */}
-        <Route path="/" exact component={HomePage} />
+        <Route path="/" element={<HomePage />} />
       </Routes>
     </Router>
   );

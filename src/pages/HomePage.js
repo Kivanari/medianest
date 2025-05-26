@@ -1,13 +1,13 @@
 
 import React from 'react';
-import { Link } from 'react-router-dom';  // Импортируем Link
-import { Button } from '@mui/material'; 
+import { Button, Link } from '@mui/material';  // Импортируем Link и Button
 
 const HomePage = () => {
   return (
     <div>
       <h1>Добро пожаловать в MediaNest!</h1>
-      <p>Это главная страница. Перейдите на страницу регистрации.</p>
+      
+      <p>Перейдите на <Link to="/register">страницу регистрации</Link>.</p>
       <Button variant="contained" color="primary">
         Пример кнопки
       </Button>
