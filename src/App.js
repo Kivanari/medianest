@@ -7,6 +7,7 @@ function App() {
   return (
     <Router>
       <Routes>
+        
         {/* Маршрут для страницы регистрации */}
         <Route path="/register" element={<Register />} />
         
