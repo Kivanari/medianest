@@ -7,11 +7,6 @@ const HomePage = () => {
     <div>
       <h1>Добро пожаловать в MediaNest!</h1>
       
-      {/* Используем Link из react-router-dom для перехода */}
-      <p>Перейдите на <Link to="/register">страницу регистрации</Link>.</p>
-      <Button variant="contained" color="primary">
-        Пример кнопки
-      </Button>
     </div>
   );
 };
