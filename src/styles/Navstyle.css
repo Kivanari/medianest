@@ -1,0 +1,80 @@
+/* Общие стили для шапки */
+.MuiAppBar-root {
+  background-color: #333 !important;  /* Устанавливаем темный фон для шапки */
+  padding-left: 8px;  /* Отступ слева */
+  padding-right: 8px;  /* Отступ справа */
+}
+
+/* Логотип */
+.logo {
+  display: flex;
+  align-items: center;  /* Выравнивание логотипа по вертикали */
+}
+
+/* Кнопка "Категории" */
+.categoryButton {
+  margin-right: 2px;
+}
+
+/* Строка поиска */
+.searchBox {
+  flex-grow: 1;  /* Строка поиска растягивается на оставшуюся ширину */
+  margin-left: 2px;  /* Отступ слева от строки поиска */
+}
+
+.searchField {
+  background-color: #444;  /* Цвет строки поиска чуть светлее шапки */
+  border-radius: 5px;  /* Закругленные углы */
+}
+
+/* Кнопка "Войти" */
+.loginButton {
+  color: white !important; /* Белый цвет текста для кнопки */
+  text-transform: none !important; /* Убираем верхний регистр */
+}
+
+/* Стили для ссылок */
+.link {
+  text-decoration: none;  /* Убираем подчеркивание */
+  color: white;  /* Белый цвет для текста */
+}
+
+/* Стили для выпадающего меню */
+.MuiMenu-root {
+  background-color: #333 !important;  /* Темный фон для меню */
+  color: white !important;  /* Белый цвет для текста */
+  border-radius: 5px;  /* Скругленные углы меню */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Легкая тень для меню */
+  position: absolute !important; /* Задаем абсолютное позиционирование */
+  z-index: 1201 !important;  /* Убедимся, что меню будет поверх других элементов */
+}
+
+/* Стили для элементов меню */
+.MuiMenuItem-root {
+  color: white !important;  /* Белый цвет для текста элементов меню */
+  background-color: #333;  /* Фон для элементов меню */
+  padding: 8px 16px;  /* Добавляем отступы, чтобы элементы не слипались */
+  border-radius: 5px;  /* Закругленные углы */
+}
+
+/* Эффект наведения на элементы меню */
+.MuiMenuItem-root:hover {
+  background-color: #444 !important;  /* Немного светлее фон при наведении */
+  color: white !important;  /* Белый цвет текста */
+}
+
+/* Для иконок в меню */
+.MuiSvgIcon-root {
+  color: white;
+}
+
+/* Убираем фон с остальной части страницы при открытии меню */
+.MuiBackdrop-root {
+  display: none !important; /* Убираем фон, который перекрывает страницу */
+}
+
+/* Для меню, чтобы оно было внутри шапки */
+.MuiMenu-paper {
+  background-color: #333 !important;  /* Темный фон для бумаги */
+  color: white;
+}

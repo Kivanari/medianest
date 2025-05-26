@@ -1,22 +1,22 @@
 import React, { useState } from 'react';
 import { TextField, Button, Container, Typography } from '@mui/material';
-import { useNavigate } from 'react-router-dom';  // Для перехода на другую страницу
-
-const Login = ({ handleLogin }) => {
+import { useNavigate } from 'react-router-dom';  // Для навигации на другую страницу
+import '../styles/auth.css';
+const Register = ({ handleLogin }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();  // Хук для навигации
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Логика авторизации (в этом примере просто сохраняем username)
+    // Логика регистрации (в этом примере просто сохраняем username)
     handleLogin(username);
     navigate('/');  // Перенаправляем на главную страницу
   };
 
   return (
     <Container maxWidth="xs">
-      <Typography variant="h4" gutterBottom>Авторизация</Typography>
+      <Typography variant="h4" gutterBottom>Регистрация</Typography>
       <form onSubmit={handleSubmit}>
         <TextField
           label="Логин (никнейм)"
@@ -34,11 +34,11 @@ const Login = ({ handleLogin }) => {
           margin="normal"
         />
         <Button type="submit" variant="contained" color="primary" fullWidth>
-          Войти
+          Зарегистрироваться
         </Button>
       </form>
     </Container>
   );
 };
 
-export default Login;
+export default Register;

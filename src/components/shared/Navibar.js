@@ -1,42 +1,60 @@
 import React, { useState } from 'react';
-import { AppBar, Toolbar, Typography, Button, Box, Menu, MenuItem, TextField, InputAdornment, IconButton } from '@mui/material';
+import { AppBar, Toolbar, Typography, Button, Box, Menu, MenuItem, TextField, InputAdornment } from '@mui/material';
 import { Link } from 'react-router-dom';  // Для навигации между страницами
 import SearchIcon from '@mui/icons-material/Search';  // Иконка поиска
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';  // Иконка профиля
+import '../../styles/Navstyle.css'; // Подключаем CSS файл с общими стилями
 
 const Navbar = ({ isAuthenticated, username }) => {
-  const [anchorEl, setAnchorEl] = useState(null);  // Для управления выпадающим меню
+  const [anchorEl, setAnchorEl] = useState(null);  // Для управления выпадающим меню категорий
   const [searchQuery, setSearchQuery] = useState(''); // Для строки поиска
-  const [profileMenuAnchorEl, setProfileMenuAnchorEl] = useState(null); // Для управления меню профиля
 
+  // Открытие меню категорий
   const handleMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
   };
 
+  // Закрытие меню категорий
   const handleMenuClose = () => {
     setAnchorEl(null);
   };
 
-  const handleProfileMenuOpen = (event) => {
-    setProfileMenuAnchorEl(event.currentTarget);
-  };
-
-  const handleProfileMenuClose = () => {
-    setProfileMenuAnchorEl(null);
-  };
-
   return (
-    <AppBar position="sticky" sx={{ backgroundColor: '#333' }}>
-      <Toolbar sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+    // Шапка сайта
+    <AppBar position="sticky" className="MuiAppBar-root">
+      <Toolbar sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: 0 }}>
         {/* Логотип */}
-        <Box sx={{ flexGrow: 1 }}>
-          <Typography variant="h6" component="div">
-            <Link to="/" style={{ textDecoration: 'none', color: 'white' }}>MediaNest</Link>
+        <Box className="logo">
+          <Typography variant="h6" component="div" sx={{ marginRight: 2 }}>
+            <Link to="/" className="link">MediaNest</Link> {/* Применяем класс для белого цвета */}
           </Typography>
+
+          {/* Кнопка "Категории" */}
+          <Button
+            color="inherit"
+            onClick={handleMenuOpen}
+            className="categoryButton"
+          >
+            Категории
+          </Button>
+          <Menu
+            anchorEl={anchorEl}
+            open={Boolean(anchorEl)}
+            onClose={handleMenuClose}
+          >
+            <MenuItem onClick={handleMenuClose} className="menuItem">
+              <Link to="/movies" className="link">Фильмы</Link>
+            </MenuItem>
+            <MenuItem onClick={handleMenuClose} className="menuItem">
+              <Link to="/books" className="link">Книги</Link>
+            </MenuItem>
+            <MenuItem onClick={handleMenuClose} className="menuItem">
+              <Link to="/series" className="link">Сериалы</Link>
+            </MenuItem>
+          </Menu>
         </Box>
 
         {/* Строка поиска */}
-        <Box sx={{ width: '50%' }}>
+        <Box className="searchBox">
           <TextField
             variant="outlined"
             size="small"
@@ -47,55 +65,23 @@ const Navbar = ({ isAuthenticated, username }) => {
             InputProps={{
               startAdornment: (
                 <InputAdornment position="start">
-                  <SearchIcon />
+                  <SearchIcon sx={{ color: 'white' }} /> {/* Белая иконка поиска */}
                 </InputAdornment>
               ),
             }}
-            sx={{ backgroundColor: 'white' }}
+            className="searchField"  // Применяем CSS класс
           />
         </Box>
 
-        {/* Кнопка "Категории" */}
-        <Button
-          color="inherit"
-          onClick={handleMenuOpen}
-        >
-          Категории
-        </Button>
-        <Menu
-          anchorEl={anchorEl}
-          open={Boolean(anchorEl)}
-          onClose={handleMenuClose}
-        >
-          <MenuItem onClick={handleMenuClose}>Фильмы</MenuItem>
-          <MenuItem onClick={handleMenuClose}>Книги</MenuItem>
-          <MenuItem onClick={handleMenuClose}>Сериалы</MenuItem>
-        </Menu>
-
-        {/* Профиль */}
+        {/* Кнопка "Войти" */}
         <Box sx={{ marginLeft: 2 }}>
           {isAuthenticated ? (
-            <Button color="inherit">{username}</Button>  // Если авторизован, показываем имя пользователя
+            <Button className="loginButton">{username}</Button>  // Если авторизован, показываем имя пользователя
           ) : (
-            <Link to="/login" style={{ textDecoration: 'none' }}>
-              <Button color="inherit">Войти</Button>  {/* Кнопка Войти, если не авторизован */}
+            <Link to="/login" className="link">
+              <Button className="loginButton">Войти</Button>  {/* Кнопка Войти без квадрата */}
             </Link>
           )}
-          {/* Иконка профиля */}
-          <IconButton
-            color="inherit"
-            onClick={handleProfileMenuOpen}
-          >
-            <AccountCircleIcon />
-          </IconButton>
-          <Menu
-            anchorEl={profileMenuAnchorEl}
-            open={Boolean(profileMenuAnchorEl)}
-            onClose={handleProfileMenuClose}
-          >
-            <MenuItem onClick={handleProfileMenuClose}>Мой профиль</MenuItem>
-            <MenuItem onClick={handleProfileMenuClose}>Выход</MenuItem>
-          </Menu>
         </Box>
       </Toolbar>
     </AppBar>

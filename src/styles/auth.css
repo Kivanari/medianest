@@ -1,0 +1,62 @@
+/* Стили для заголовков на странице входа и регистрации */
+.auth-header {
+  color: white;
+  margin-bottom: 20px;
+}
+
+/* Стили для полей ввода (email, пароль) */
+.MuiTextField-root .MuiInputBase-root {
+  color: white;  /* Белый цвет текста в полях */
+}
+
+/* Цвет для подписей к полям */
+.MuiInputLabel-root {
+  color: white !important;  /* Белый цвет для подписей в полях ввода */
+}
+
+/* Строка ввода (email, пароль) */
+.MuiInputBase-input {
+  color: white !important;  /* Белый цвет текста в строках ввода */
+}
+
+/* Кнопка "Войти" / "Зарегистрироваться" */
+.MuiButton-root {
+  color: white !important; /* Белый текст для кнопки */
+  text-transform: none !important; /* Убираем верхний регистр */
+  background-color: #333;  /* Темный фон для кнопки */
+  width: 100%;  /* Кнопка на всю ширину */
+  margin-top: 20px;
+}
+
+/* Стили для ссылки на страницу регистрации */
+.auth-link {
+  text-decoration: none;
+  color: white;
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Для подсказки "Еще нет аккаунта?" */
+.auth-link-text {
+  color: white;
+}
+
+/* Стиль для контейнера */
+.auth-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Внешний контейнер страницы */
+.auth-page {
+  background-color: #121212;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

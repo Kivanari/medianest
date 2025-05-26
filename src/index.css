@@ -1,26 +1,19 @@
-/* Сбросим стили по умолчанию */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 /* Для body */
 body {
+  margin: 0;
+  padding-left: 3px;
+  padding-right: 3px;
   font-family: 'Roboto', sans-serif;
   background-color: #121212;
   color: white;
 }
+ 
 
 /* Стиль для AppBar (шапки сайта) */
 .MuiAppBar-root {
   background-color: #333;  /* Темный фон для шапки */
 }
 
-/* Стиль для поля поиска */
-.MuiTextField-root {
-  width: 100%;  /* Растягиваем поле поиска на всю ширину */
-}
 
 /* Кнопки в Navbar */
 .MuiButton-root {
@@ -36,4 +29,9 @@ body {
 /* Для кнопки Войти */
 .MuiButton-root.MuiButton-text {
   font-size: 16px;
+}
+
+/* Для логотипа */
+.MuiTypography-root {
+  width: auto;  /* Логотип не будет растягиваться */
 }
