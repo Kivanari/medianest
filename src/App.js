@@ -19,6 +19,8 @@ function App() {
 
         {/* Страница регистрации */}
         <Route path="/register" element={<RegisterPage />} />
+
+        {/* <Route path="/info" element={<InfoPage />} /> */}
       </Routes>
     </Router>
   );
