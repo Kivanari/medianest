@@ -17,6 +17,7 @@
 /* Строка ввода (email, пароль) */
 .MuiInputBase-input {
   color: white !important;  /* Белый цвет текста в строках ввода */
+  
 }
 
 /* Кнопка "Войти" / "Зарегистрироваться" */
@@ -59,4 +60,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+/* Цвет рамки поля ввода по умолчанию */
+.MuiTextField-root .MuiOutlinedInput-root fieldset {
+  border-color: #333 !important; /* Красный цвет рамки */
 }
